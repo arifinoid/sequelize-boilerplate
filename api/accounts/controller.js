@@ -1,7 +1,6 @@
 const models = require("../models");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const controller = require("./controller");
 
 exports.get = async (req, res) => {
   const accounts = await models.accounts.findAll();

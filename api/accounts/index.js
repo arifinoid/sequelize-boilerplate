@@ -1,10 +1,9 @@
 const router = require("express").Router();
-const models = require("../models");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+const helpers = require("../helpers");
 const controller = require("./controller");
 
-router.get("/", controller.get);
+//get all data
+router.get("/", helpers.isAuthenticated, controller.get);
 
 router.post("/", controller.post);
 

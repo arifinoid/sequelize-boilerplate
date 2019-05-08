@@ -1,3 +1,4 @@
+//All syntax in this file is from sequelize github
 "use strict";
 
 var fs = require("fs");
@@ -30,7 +31,7 @@ fs.readdirSync(__dirname)
   .forEach(file => {
     var model = sequelize["import"](path.join(__dirname, file));
     db[model.name] = model;
-    // db[model.name].sync({ force: true }); //script magic circuit
+    // db[model.name].sync({ force: true }); //script magic circuit to make a table
   });
 
 Object.keys(db).forEach(modelName => {
